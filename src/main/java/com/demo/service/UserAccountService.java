@@ -65,10 +65,10 @@ public class UserAccountService {
 				userAccountRepository.save(account);
 				return account;
 			}else{
-				return null;
+				throw new UserNotFoundException("user details already exit");
 			}
 		}else {
-			return null;
+			throw new UserNotFoundException("user not found");
 		}
 		
 	}
